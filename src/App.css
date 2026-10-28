@@ -1,0 +1,175 @@
+/* App.css - Paradise Nursery Landing Page & Layout */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.landing-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.landing-page.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.7);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.55);
+  gap: 50px;
+  padding: 40px;
+}
+
+.landing_content {
+  text-align: center;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.content p,
+.content h1 {
+  color: white;
+}
+
+.content h1 {
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.content p {
+  font-size: 22px;
+  color: #e0f2e9;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background-color: #4caf50;
+  margin: 10px 0;
+  border-radius: 2px;
+}
+
+.get-started-button {
+  padding: 14px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.get-started-button:hover {
+  background-color: #3d8b40;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.6);
+}
+
+.aboutus_container {
+  max-width: 650px;
+}
+
+/* ProductList Container Transition */
+.product-list-container {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f7faf7;
+  transition: top 0.5s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+.product-list-container.visible {
+  top: 0;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 960px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .landing_content {
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+
+  .aboutus_container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .get-started-button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+}
